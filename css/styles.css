@@ -104,10 +104,37 @@ body::before {
         font-size: 1rem;
     }
     .card {
-        padding: 20px;
+        padding: 15px;
+        width: calc(100% - 20px);
     }
     .letter-content p {
         font-size: 1rem;
+        padding: 0 10px;
+    }
+    .signature-container {
+        padding: 10px 0;
+    }
+    .signature-decoration {
+        font-size: 4rem;
+    }
+    .with-love {
+        font-size: 1.3rem;
+    }
+    .your-son {
+        font-size: 1.5rem;
+    }
+    .signature {
+        font-size: 1.8rem;
+        padding: 5px 15px;
+        transform: rotate(0deg);
+        width: 100%;
+        text-align: center;
+    }
+    .signature::after {
+        width: 60%;
+    }
+    .love-message {
+        font-size: 1.4rem;
         padding: 0 10px;
     }
 }
@@ -493,12 +520,14 @@ body::before {
 .signature {
     font-size: 2.2rem;
     color: #880e4f;
-    margin-top: 15px;
+    margin: 15px auto 0;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
     transform: rotate(-3deg);
     display: inline-block;
     padding: 10px 30px;
     position: relative;
+    text-align: center;
+    width: fit-content;
 }
 
 .signature::after {
