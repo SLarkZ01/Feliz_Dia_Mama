@@ -380,5 +380,102 @@ body::before {
     left: 50%;
 }
 
+/* Estilos para la carta */
+.letter-image {
+    margin-bottom: 30px;
+}
+
+.letter-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dear {
+    font-size: 1.4rem;
+    color: #d81b60;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 25px;
+}
+
+.letter-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #5d4037;
+}
+
+.letter-content p {
+    text-align: justify;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.love-message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    color: #c2185b;
+    text-align: center !important;
+    margin: 30px 0;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #c2185b;
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* Estilos para la firma */
+.signature-container {
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    padding: 20px 0;
+}
+
+.signature-decoration {
+    font-size: 6rem;
+    margin-bottom: 15px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.with-love {
+    font-size: 1.6rem;
+    color: #d81b60;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.your-son {
+    font-size: 1.8rem;
+    color: #c2185b;
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+.signature {
+    font-size: 2.2rem;
+    color: #880e4f;
+    margin-top: 15px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+    transform: rotate(-3deg);
+    display: inline-block;
+    padding: 10px 30px;
+    position: relative;
+}
+
+.signature::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c2185b, transparent);
+}
+
 
 
