@@ -95,47 +95,61 @@ body::before {
 /* Media queries para diferentes tamaños de pantalla */
 @media (max-width: 576px) {
     .main-container {
-        padding: 10px;
+        padding: 5px;
+        height: 100%;
     }
     .front h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     .front p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .card {
-        padding: 15px;
-        width: calc(100% - 20px);
+        padding: 10px;
+        width: calc(100% - 10px);
+        max-height: 80vh;
+    }
+    .card-content {
+        padding: 10px;
     }
     .letter-content p {
-        font-size: 1rem;
-        padding: 0 10px;
+        font-size: 0.95rem;
+        padding: 0 8px;
+        margin-bottom: 12px;
     }
     .signature-container {
-        padding: 10px 0;
+        padding: 8px 0;
+        margin-bottom: 15px;
     }
     .signature-decoration {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
     .with-love {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
     }
     .your-son {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 5px;
     }
     .signature {
-        font-size: 1.8rem;
-        padding: 5px 15px;
+        font-size: 1.6rem;
+        padding: 5px 10px;
         transform: rotate(0deg);
         width: 100%;
         text-align: center;
+        margin: 5px 0;
     }
     .signature::after {
         width: 60%;
     }
     .love-message {
-        font-size: 1.4rem;
-        padding: 0 10px;
+        font-size: 1.3rem;
+        padding: 0 8px;
+        margin-bottom: 10px;
+    }
+    .footer-decoration {
+        margin-top: 15px;
     }
 }
 
@@ -262,8 +276,8 @@ body::before {
 
 /* Estilos de la tarjeta */
 .card {
-    position: fixed;
-    top: 45%;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotateX(-90deg);
     width: calc(100% - 40px);
@@ -276,8 +290,9 @@ body::before {
     opacity: 0;
     z-index: 1;
     margin: 0 auto;
-    max-height: 90vh;
+    max-height: 85vh;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .envelope.open .card {
