@@ -48,6 +48,10 @@ function createHeart() {
     const heartsContainer = document.querySelector('.floating-hearts');
     const heartEmojis = ['❤️', '💝', '💖', '💗', '💓']; // Variedad de emojis de corazón
     
+    // Verificar cuántos corazones hay actualmente
+    const currentHearts = document.querySelectorAll('.emoji-heart').length;
+    if (currentHearts >= 12) return; // Limitar el número máximo de corazones
+    
     const heart = document.createElement('div');
     heart.className = 'emoji-heart';
     
@@ -55,12 +59,15 @@ function createHeart() {
     const randomEmoji = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
     heart.textContent = randomEmoji;
     
-    // Tamaño aleatorio entre 20px y 40px
-    const size = Math.random() * 20 + 20;
+    // Tamaño más variable (entre 15px y 35px)
+    const size = Math.random() * 20 + 15;
     heart.style.fontSize = `${size}px`;
     
-    // Posición horizontal aleatoria
-    heart.style.left = `${Math.random() * 100}%`;
+    // Posición horizontal aleatoria con margen
+    heart.style.left = `${Math.random() * 80 + 10}%`; // 10% - 90% del ancho
+    
+    // Ajustar la duración de la animación aleatoriamente
+    heart.style.animationDuration = `${Math.random() * 3 + 4}s`; // 4-7 segundos
     
     heartsContainer.appendChild(heart);
     
@@ -71,13 +78,22 @@ function createHeart() {
 }
 
 function initFloatingHearts() {
-    // Crear corazones iniciales
-    for (let i = 0; i < 15; i++) {
-        setTimeout(() => createHeart(), Math.random() * 3000);
+    // Crear corazones iniciales de manera más espaciada
+    for (let i = 0; i < 5; i++) {
+        setTimeout(() => createHeart(), Math.random() * 8000);
     }
     
-    // Crear nuevos corazones periódicamente
-    setInterval(() => {
-        createHeart();
-    }, 1200); // Crear un nuevo corazón cada 400ms
+    // Crear nuevos corazones con intervalos aleatorios
+    let nextHeartTime = 3000;
+    
+    function scheduleNextHeart() {
+        setTimeout(() => {
+            createHeart();
+            // Calcular próximo intervalo aleatorio entre 2 y 5 segundos
+            nextHeartTime = Math.random() * 3000 + 2000;
+            scheduleNextHeart();
+        }, nextHeartTime);
+    }
+    
+    scheduleNextHeart();
 }
