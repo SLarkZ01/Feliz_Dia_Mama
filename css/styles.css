@@ -277,7 +277,7 @@ body::before {
 /* Estilos de la tarjeta */
 .card {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%) rotateX(-90deg);
     width: calc(100% - 40px);
